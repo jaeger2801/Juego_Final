@@ -53,15 +53,6 @@ setXpos(nuevoXpos) {
 
 setYpos(newYpos) {
     this.yPos = nuevoYpos;
-}
-getVida() {
-    return vidas;
-}
-setVida(newVidas) {
-    vidas = newVidas;
-}
-pvida() {
-    console.log("funciona")
-    this.setVida(this.getVida() - 1);
+
 }
 }

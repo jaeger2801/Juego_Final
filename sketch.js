@@ -7,7 +7,7 @@ let enemigo;
 
 function setup() {
   createCanvas(1000, 400);
-  pantalla = 0;
+  pantalla = 1;
   //escenarios
   mapa1 = new Terreno2D1();
   mapa1.arregloEscaque();
@@ -85,23 +85,10 @@ function keyPressed() {
           }
           break;
   }
-  }
-
+  
   function MousePressed(){
       
-
   }
   jugador.updateLocation();
-  //verifyItem();
-  console.log(jugador.getVida());
-
-
-   verifyEnemy() 
-   {
-    if (dist(Player.getX(), Player.getY(), Enemy.getX(), Enemy.getY()) < 5) {
-        Player.pvida();
-        Player.reset();
-        Enemy.init();
-    }
+  
 }
-
