@@ -6,8 +6,8 @@ let jugador;
 let enemigo;
 
 function setup() {
-  createCanvas(800, 400);
-  pantalla = 1;
+  createCanvas(1000, 400);
+  pantalla = 0;
   //escenarios
   mapa1 = new Terreno2D1();
   mapa1.arregloEscaque();
@@ -18,11 +18,24 @@ function setup() {
 }
 
 function draw() {
-  background(220); 
+  background(20); 
   
   mapa1.mostrar();
 
   switch(pantalla){
+      case 0:
+          //espacio para poner la imagen inicial del juego
+          noStroke();
+          fill(255,0,255);
+          rect(0,0,1000,400);
+
+          fill(0);
+          textSize(60);
+          text("Aqui va el titulo del juego", 170, 150);
+
+          fill(0);
+          rect(330,250,300,40);
+          break;
     case 1:
       mapa1.personalizarParedes(0);
       jugador.mostrarProtagonista(0,0);
@@ -72,7 +85,23 @@ function keyPressed() {
           }
           break;
   }
+  }
+
+  function MousePressed(){
+      
+
+  }
   jugador.updateLocation();
   //verifyItem();
-  //console.log(jugador.getVida());
+  console.log(jugador.getVida());
+
+
+   verifyEnemy() 
+   {
+    if (dist(Player.getX(), Player.getY(), Enemy.getX(), Enemy.getY()) < 5) {
+        Player.pvida();
+        Player.reset();
+        Enemy.init();
+    }
 }
+
