@@ -4,6 +4,8 @@ let pantalla;
 //personajes
 let jugador;
 let enemigo;
+//ajustes
+let ancho;
 
 function setup() {
   createCanvas(1000, 400);
@@ -15,6 +17,8 @@ function setup() {
   jugador = new Player(0,0);
   enemigo = new Enemy(2,17);
   enemigo2 = new Enemy2(2,6);
+  //ajustes
+  ancho = 20;
 }
 
 function draw() {
@@ -32,11 +36,28 @@ function draw() {
           fill(0);
           textSize(60);
           text("Aqui va el titulo del juego", 170, 150);
-
+          //boton para seguir
           fill(0);
           rect(330,250,300,40);
+
           break;
-    case 1:
+//---------------------------------------------------------------------------------------
+          case 1:
+           background(242,159,5);
+	        fill(255);
+	        rect(300, 250, ancho+5, 30, 8);
+	
+	
+	if(frameCount%60 == 0) {
+		ancho +=40;
+		
+		if(ancho>=340) {
+			pantalla = 2;
+			ancho = 0;
+		}
+	}
+            break;
+    case 2:
       mapa1.personalizarParedes(0);
       jugador.mostrarProtagonista(0,0);
       enemigo.show(3,0);
@@ -87,6 +108,9 @@ function keyPressed() {
   }
   
   function MousePressed(){
+      switch(pantalla){
+          
+      }
       
   }
   jugador.updateLocation();
