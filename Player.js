@@ -17,11 +17,17 @@ updateLocation(){
     this.yPos = (this.pFil * 40) + 20; // validamos el mapa en la matriz
 }
 reset(){
-    pjCol = 0; // pixeles
+            pjCol = 0; // pixeles
             pjFil = 0; // pixeles
             xPos = (pjCol * 40) + 20; // validamos el mapa en la matriz
             yPos = (pjFil * 40) + 20; // validamos el mapa en la matriz
             vidas = 3;
+}
+getX () {
+    return this.xPos;
+}
+getY () {
+    return this.yPos;
 }
 getPcol() {
     return this.pCol;
@@ -54,5 +60,15 @@ setXpos(nuevoXpos) {
 setYpos(newYpos) {
     this.yPos = nuevoYpos;
 
+}
+getVida() {
+    return vidas;
+}
+setVida(newVidas) {
+    vidas = newVidas;
+}
+pvida() {
+    console.log("funciona")
+    this.setVida(this.getVida() - 1);
 }
 }

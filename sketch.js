@@ -9,7 +9,7 @@ let ancho;
 
 function setup() {
   createCanvas(1000, 400);
-  pantalla = 1;
+  pantalla = 0;
   //escenarios
   mapa1 = new Terreno2D1();
   mapa1.arregloEscaque();
@@ -40,10 +40,13 @@ function draw() {
           fill(0);
           rect(330,250,300,40);
 
+
+
           break;
 //---------------------------------------------------------------------------------------
           case 1:
            background(242,159,5);
+           noStroke();
 	        fill(255);
 	        rect(300, 250, ancho+5, 30, 8);
 	
@@ -107,12 +110,29 @@ function keyPressed() {
           break;
   }
   
-  function MousePressed(){
+  function mousePressed(){
       switch(pantalla){
-          
+          case 0:
+              //rect(330,250,300,40);
+              if(mouseX >330 && mouseX < 630 && mouseY > 250 && mouseY < 290){
+                console.log("se cambió de pantalla");
+                  pantalla = 1;
+                  
+              }
+              break;
       }
       
   }
   jugador.updateLocation();
   
 }
+//aqui vamos a configurar el ataque de los enemigos
+function verifyEnemy() {
+    if (dist(jugador.getX(), jugador.getY(), enemigo.getX(), enemigo.getY()) < 10) {
+        jugador.pvida();
+        jugador.reset();
+        enemigo.init();
+        console.log("se la comió");
+    }
+}
+  
