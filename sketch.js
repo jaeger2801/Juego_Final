@@ -9,6 +9,9 @@ let enemigo;
 let enemigo2;
 let enemigo3;
 let enemigo4;
+let enemigo5;
+let enemigo6;
+let enemigo7;
 //ajustes
 let ancho;
 let xPos;
@@ -18,7 +21,7 @@ let pFil;
 
 function setup() {
   createCanvas(1000, 400);
-  pantalla = 3;
+  pantalla = 2;
   //escenarios
   mapa1 = new Terreno2D1();
   mapa1.arregloEscaque();
@@ -33,6 +36,10 @@ function setup() {
   //Nivel 2
   enemigo3 = new Enemy3(6,9);
   enemigo4 = new Enemy3(8,3);
+  //Nivel 3
+  enemigo5 = new Enemy3(6,9);
+  enemigo6 = new Enemy3(6,9);
+  enemigo7 = new Enemy3(6,9);
   //ajustes
   ancho = 20;
 }
@@ -79,7 +86,7 @@ function draw() {
 	}
             break;
     case 2:
-        
+       //Neptuno 
       mapa1.personalizarParedes(0);
       jugador.mostrarProtagonista(0,0);
       enemigo.show(3,0);
@@ -87,7 +94,7 @@ function draw() {
       enemigo2.show(2,6);
          enemigo2.move(mapa1);
 
-         
+
  //llamamos la funcion del ataque del enemigo para hacer que el nivel se reinicie     
       AtaqueEnemigo();
       AtaqueEnemigo2();
@@ -99,6 +106,7 @@ function draw() {
       }*/
       break;
 //-------------------------------------------------------------
+//Nivel 2
      case 3:
          mapa1.personalizarParedes2(0);
          jugador.mostrarProtagonista(0,0);
@@ -111,6 +119,19 @@ function draw() {
       AtaqueEnemigo3();
       AtaqueEnemigo4();
          break;
+//---------------------------------------------------------------
+//Nivel 3
+case 4:
+    mapa1.personalizarParedes2(0);
+    jugador.mostrarProtagonista(0,0);
+    enemigo5.show(6,9);
+    enemigo5.move(mapa1);
+    enemigo6.show(6,9);
+    enemigo6.move(mapa1);
+    enemigo7.show(6,9);
+    enemigo7.move(mapa1);
+
+    break;
   }
 }
 function keyPressed() {
