@@ -6,6 +6,7 @@ let pantalla;
 let jugador;
 let jugador2;
 let enemigo;
+let enemigo2;
 //ajustes
 let ancho;
 let xPos;
@@ -77,8 +78,11 @@ function draw() {
       jugador.mostrarProtagonista(0,0);
       enemigo.show(3,0);
       enemigo.move(mapa1);
+      enemigo2.show(2,6);
+         enemigo2.move(mapa1);
       
       AtaqueEnemigo();
+      AtaqueEnemigo2();
 
       
       /*for(let i = 0; i < enemigo.length; i++){
@@ -91,8 +95,7 @@ function draw() {
          mapa2.mostrar2();
          mapa2.personalizarParedes2(0);
          jugador2.mostrarProtagonista(0,0);
-         enemigo2.show(2,6);
-         enemigo2.move(mapa2);
+         
 
       AtaqueEnemigo();
          break;
@@ -162,13 +165,15 @@ function AtaqueEnemigo() {
         console.log("se la comió");
     }
     }
- function AtaqueEnemigo2() {
-        if (dist(jugador.getX(), jugador.getY(), enemigo2.getX(), enemigo2.getY()) < 5) {
-            jugador.pvida();
-            jugador.reset();
-            enemigo2.init();
-            console.log("se la comió");
-        }
-}
+//aqui vamos a configurar el ataque de los enemigos
+function AtaqueEnemigo2() {
+    if (dist(jugador.getX(), jugador.getY(), enemigo2.getX(), enemigo2.getY()) < 5) {
+        
+        jugador.reset();
+        enemigo2.init();
+        console.log("se la comió");
+    }
+    }
+
 
   
