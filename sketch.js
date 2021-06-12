@@ -8,6 +8,7 @@ let jugador2;
 let enemigo;
 let enemigo2;
 let enemigo3;
+let enemigo4;
 //ajustes
 let ancho;
 let xPos;
@@ -31,6 +32,7 @@ function setup() {
   enemigo2 = new Enemy2(2,6);
   //Nivel 2
   enemigo3 = new Enemy3(6,9);
+  enemigo4 = new Enemy3(8,3);
   //ajustes
   ancho = 20;
 }
@@ -84,7 +86,9 @@ function draw() {
       enemigo.move(mapa1);
       enemigo2.show(2,6);
          enemigo2.move(mapa1);
-      
+
+         
+ //llamamos la funcion del ataque del enemigo para hacer que el nivel se reinicie     
       AtaqueEnemigo();
       AtaqueEnemigo2();
 
@@ -100,9 +104,12 @@ function draw() {
          jugador.mostrarProtagonista(0,0);
          enemigo3.show(6,9);
          enemigo3.move(mapa1);
+         enemigo4.show(6,9);
+         enemigo4.move(mapa1);
          
-
+//llamamos la funcion del ataque del enemigo para hacer que el nivel se reinicie
       AtaqueEnemigo3();
+      AtaqueEnemigo4();
          break;
   }
 }
@@ -180,12 +187,22 @@ function AtaqueEnemigo2() {
     }
     }
 
-////aqui vamos a configurar el ataque del enemigo 2 que está en el nivel 1
+////aqui vamos a configurar el ataque del enemigo 3 que está en el nivel 2
 function AtaqueEnemigo3() {
     if (dist(jugador.getX(), jugador.getY(), enemigo3.getX(), enemigo3.getY()) < 5) {
         
         jugador.reset();
         enemigo3.init();
+        console.log("se la comió");
+    }
+    }
+
+    ////aqui vamos a configurar el ataque del enemigo 4 que está en el nivel 2
+function AtaqueEnemigo4() {
+    if (dist(jugador.getX(), jugador.getY(), enemigo4.getX(), enemigo4.getY()) < 5) {
+        
+        jugador.reset();
+        enemigo4.init();
         console.log("se la comió");
     }
     }

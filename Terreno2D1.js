@@ -109,6 +109,7 @@ personalizarParedes(pantalla1) {
     }
 }
 //------------------------------------------------------
+//aqui se programan las paredes que tendrá el segundo  nivel
 personalizarParedes2(pantalla1) {
 
     for (let fil = 0; fil < 20; fil++) {
