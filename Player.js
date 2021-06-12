@@ -1,10 +1,10 @@
 class Player {
     constructor(pFil, pCol){
 
-        this.xPos = (pCol * 40) + 20;
-        this.yPos = (pFil * 40) + 20;
-        this.pCol = pCol;
-        this.pFil = pFil;
+        this.xPos = 20
+        this.yPos = 20
+        this.pCol = 0
+        this.pFil = 0
         
 
     }
@@ -17,11 +17,12 @@ updateLocation(){
     this.yPos = (this.pFil * 40) + 20; // validamos el mapa en la matriz
 }
 reset(){
-            pjCol = 0; // pixeles
-            pjFil = 0; // pixeles
-            xPos = (pjCol * 40) + 20; // validamos el mapa en la matriz
-            yPos = (pjFil * 40) + 20; // validamos el mapa en la matriz
-            vidas = 3;
+            
+    pCol = 0; // pixeles
+    pFil = 0; // pixeles
+    this.xPos = 20
+    this.yPos = 20
+            
 }
 getX () {
     return this.xPos;
@@ -37,10 +38,17 @@ getPfil() {
     return this.pFil;
 }
 
+setXpos(nuevoXpos) {
+    this.xPos = nuevoXpos;
+}
 getXpos() {
     return this.xPos;
 }
 
+setYpos(newYpos) {
+    this.yPos = nuevoYpos;
+
+}
 getYpos() {
     return this.yPos;
 }
@@ -53,20 +61,9 @@ setPfil(nuevoPfil) {
     this.pFil = nuevoPfil;
 }
 
-setXpos(nuevoXpos) {
-    this.xPos = nuevoXpos;
-}
 
-setYpos(newYpos) {
-    this.yPos = nuevoYpos;
 
-}
-setCol(newCol) {
-    pjCol = newCol;
-}
-setFil(newFil){
-    pjFil = newFil;
-}
+
 /*getVida() {
     return vidas;
 }*/
@@ -78,3 +75,4 @@ pvida() {
     //this.setVida(this.getVida() - 1);
 }
 }
+

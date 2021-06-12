@@ -7,6 +7,10 @@ let jugador;
 let enemigo;
 //ajustes
 let ancho;
+let xPos;
+let yPos;
+let pCol;
+let pFil;
 
 function setup() {
   createCanvas(1000, 400);
@@ -74,6 +78,8 @@ function draw() {
       enemigo2.show(2,6);
       enemigo2.move(mapa1);
       AtaqueEnemigo();
+
+      
       /*for(let i = 0; i < enemigo.length; i++){
           enemigo[i].mostrarEnemigo();
           enemigo[i].moveEnemy(mapa1);
@@ -143,11 +149,20 @@ function keyPressed() {
 }
 //aqui vamos a configurar el ataque de los enemigos
 function AtaqueEnemigo() {
-    if (dist(jugador.getX(), jugador.getY(), enemigo.getX(), enemigo.getY()) < 10) {
+    if (dist(jugador.getX(), jugador.getY(), enemigo.getX(), enemigo.getY()) < 5) {
         jugador.pvida();
         jugador.reset();
         enemigo.init();
         console.log("se la comió");
     }
+    }
+ function AtaqueEnemigo2() {
+        if (dist(jugador.getX(), jugador.getY(), enemigo2.getX(), enemigo2.getY()) < 5) {
+            jugador.pvida();
+            jugador.reset();
+            enemigo2.init();
+            console.log("se la comió");
+        }
 }
+
   
