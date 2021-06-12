@@ -120,6 +120,39 @@ personalizarParedes2(pantalla1) {
             //triangulos de entrada arriba 1
             
             //triangulo de abajo
+            // seleccionamos algunos [fila][col] --> y, x
+            //triangulos de entrada arriba 1
+            this.escaque[0][1] = 1;
+            this.escaque[1][2] = 1;
+            this.escaque[2][3] = 1;
+            this.escaque[0][2] = 1;
+            this.escaque[1][3] = 1;
+            this.escaque[1][4] = 1;
+            this.escaque[0][3] = 1;
+            this.escaque[0][4] = 1;
+            this.escaque[0][5] = 1;
+            //---------------
+            this.escaque[8][1] = 1;
+            this.escaque[7][2] = 1;
+            this.escaque[6][3] = 1;
+            //---------------
+            this.escaque[6][9] = 1;
+            this.escaque[7][10] = 1;
+            this.escaque[8][11] = 1;
+            //--------------- franja de arriba 2
+            this.escaque[0][11] = 1;
+            this.escaque[1][10] = 1;
+            this.escaque[2][9] = 1;
+            //--------------- franja de arriba 3
+            this.escaque[0][14] = 1;
+            this.escaque[1][15] = 1;
+            this.escaque[2][16] = 1;
+            //---------------
+            this.escaque[6][16] = 1;
+            this.escaque[7][15] = 1;
+            this.escaque[8][14] = 1;
+            
+            //triangulo de abajo
             this.escaque[8][4] = 1;
             this.escaque[8][5] = 1;
             this.escaque[8][6] = 1;
