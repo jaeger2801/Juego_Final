@@ -16,7 +16,7 @@ let pFil;
 
 function setup() {
   createCanvas(1000, 400);
-  pantalla = 2;
+  pantalla = 3;
   //escenarios
   mapa1 = new Terreno2D1();
   mapa1.arregloEscaque();
@@ -74,6 +74,7 @@ function draw() {
 	}
             break;
     case 2:
+        
       mapa1.personalizarParedes(0);
       jugador.mostrarProtagonista(0,0);
       enemigo.show(3,0);
@@ -92,9 +93,8 @@ function draw() {
       break;
 //-------------------------------------------------------------
      case 3:
-         mapa2.mostrar2();
-         mapa2.personalizarParedes2(0);
-         jugador2.mostrarProtagonista(0,0);
+         mapa1.personalizarParedes2(0);
+         jugador.mostrarProtagonista(0,0);
          
 
       AtaqueEnemigo();
