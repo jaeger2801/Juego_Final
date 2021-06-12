@@ -1,4 +1,4 @@
-class Player {
+class Player2 {
     constructor(pFil, pCol){
 
         this.xPos = 20;
@@ -75,4 +75,3 @@ pvida() {
     //this.setVida(this.getVida() - 1);
 }
 }
-

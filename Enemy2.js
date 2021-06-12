@@ -23,7 +23,7 @@ class Enemy2 {
     }
     move (mapa1) {
         if (frameCount % 10 == 0) {
-            this.moveEnemy(mapa1);
+            this.moveEnemy(mapa2);
         }
     }
     updateLocation () {

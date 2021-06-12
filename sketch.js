@@ -4,6 +4,7 @@ let mapa2;
 let pantalla;
 //personajes
 let jugador;
+let jugador2;
 let enemigo;
 //ajustes
 let ancho;
@@ -23,6 +24,7 @@ function setup() {
   
   //personajes
   jugador = new Player(0,0);
+  jugador2 = new Player2(0,0);
   enemigo = new Enemy(2,17);
   enemigo2 = new Enemy2(2,6);
   //ajustes
@@ -75,8 +77,7 @@ function draw() {
       jugador.mostrarProtagonista(0,0);
       enemigo.show(3,0);
       enemigo.move(mapa1);
-      enemigo2.show(2,6);
-      enemigo2.move(mapa1);
+      
       AtaqueEnemigo();
 
       
@@ -89,7 +90,11 @@ function draw() {
      case 3:
          mapa2.mostrar2();
          mapa2.personalizarParedes2(0);
-         jugador.mostrarProtagonista(0,0);
+         jugador2.mostrarProtagonista(0,0);
+         enemigo2.show(2,6);
+         enemigo2.move(mapa2);
+
+      AtaqueEnemigo();
          break;
   }
 }
@@ -130,6 +135,7 @@ function keyPressed() {
           //------------------------------------------------------------------
           
           break;
+          
   }
   
   function mousePressed(){
@@ -150,7 +156,7 @@ function keyPressed() {
 //aqui vamos a configurar el ataque de los enemigos
 function AtaqueEnemigo() {
     if (dist(jugador.getX(), jugador.getY(), enemigo.getX(), enemigo.getY()) < 5) {
-        jugador.pvida();
+        
         jugador.reset();
         enemigo.init();
         console.log("se la comió");
