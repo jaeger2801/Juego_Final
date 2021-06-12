@@ -5,10 +5,10 @@ class Player {
         this.yPos = (pFil * 40) + 20;
         this.pCol = pCol;
         this.pFil = pFil;
-        this.vidas = 3;
+        
 
     }
-   mostrarProtagonista(){
+mostrarProtagonista(){
     fill(255, 0, 0);
     ellipse(this.xPos, this.yPos, 30, 30);
 }
@@ -61,14 +61,20 @@ setYpos(newYpos) {
     this.yPos = nuevoYpos;
 
 }
-getVida() {
-    return vidas;
+setCol(newCol) {
+    pjCol = newCol;
 }
+setFil(newFil){
+    pjFil = newFil;
+}
+/*getVida() {
+    return vidas;
+}*/
 setVida(newVidas) {
     vidas = newVidas;
 }
 pvida() {
     console.log("funciona")
-    this.setVida(this.getVida() - 1);
+    //this.setVida(this.getVida() - 1);
 }
 }
