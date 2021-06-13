@@ -53,7 +53,7 @@ function preload(){
 
 function setup() {
   createCanvas(1000, 400);
-  pantalla = 6;
+  pantalla = 2;
   
   //escenarios
   mapa1 = new Terreno2D1();
