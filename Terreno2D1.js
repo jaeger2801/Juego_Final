@@ -1,7 +1,9 @@
+
 class Terreno2D1 {
     constructor(){
         this.escaque = [];
         this.escaque2 = [];
+        
     }
 
     arregloEscaque() {
@@ -29,13 +31,13 @@ arregloEscaque2() {
     }
 }
 //aqui se programan las paredes que tendrá el primer nivel (Neptuno)
-personalizarParedes(pantalla1) { //Programacion del plano de Neptuno
+personalizarParedes(pantalla2) { //Programacion del plano de Neptunos
     
 
     for (let fil = 0; fil < 20; fil++) {
         for (let col = 0; col < 20; col++) {
 
-            switch (pantalla1){
+            switch (pantalla2){
                 case 0:
                     // seleccionamos algunos [fila][col] --> y, x
             //triangulos de entrada arriba 1
@@ -135,13 +137,13 @@ personalizarParedes(pantalla1) { //Programacion del plano de Neptuno
 }
 //------------------------------------------------------
 //aqui se programan las paredes que tendrá el segundo  nivel (Urano)
-personalizarParedes2(pantalla2) { //Programacion del plano de Urano
+personalizarParedes2(pantalla3) { //Programacion del plano de Urano
 
     for (let fil = 0; fil < 20; fil++) {
         for (let col = 0; col < 20; col++) {
 
-            switch (pantalla2){
-                case 2:
+            switch (pantalla3){
+                case 0:
                     // seleccionamos algunos [fila][col] --> y, x
             //triangulos de entrada arriba 1
             
@@ -257,12 +259,12 @@ personalizarParedes2(pantalla2) { //Programacion del plano de Urano
 }
 
 //aqui se programan las paredes que tendrá el segundo  nivel (Saturno)
-personalizarParedes3(pantalla3) {//Programacion del plano de Saturno
+personalizarParedes3(pantalla4) {//Programacion del plano de Saturno
 
     for (let fil = 0; fil < 20; fil++) {
         for (let col = 0; col < 20; col++) {
 
-            switch (pantalla3){
+            switch (pantalla4){
                 case 0:
                     // seleccionamos algunos [fila][col] --> y, x
 //Primera linea
@@ -371,12 +373,12 @@ this.escaque[9][19] = 1;
 }
 
 //aqui se programan las paredes que tendrá el cuarto nivel (jupiter)
-personalizarParedes4(pantalla4) {//Programacion del plano de Jupiter
+personalizarParedes4(pantalla5) {//Programacion del plano de Jupiter
 
     for (let fil = 0; fil < 20; fil++) {
         for (let col = 0; col < 20; col++) {
 
-            switch (pantalla4){
+            switch (pantalla5){
                 case 0:
                     // seleccionamos algunos [fila][col] --> y, x
 //Primera linea
@@ -491,12 +493,12 @@ this.escaque[9][17] = 1;
 }
 
 //aqui se programan las paredes que tendrá el cuarto nivel (marte)
-personalizarParedes5(pantalla5) {//Programacion del plano de marte
+personalizarParedes5(pantalla6) {//Programacion del plano de marte
 
     for (let fil = 0; fil < 20; fil++) {
         for (let col = 0; col < 20; col++) {
 
-            switch (pantalla5){
+            switch (pantalla6){
                 case 0:
                     // seleccionamos algunos [fila][col] --> y, x
 //Primera linea

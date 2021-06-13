@@ -2,6 +2,8 @@
 let mapa1;
 let mapa2;
 let pantalla;
+
+
 //personajes
 let jugador;
 let jugador2;
@@ -59,7 +61,9 @@ function preload(){
 
 function setup() {
   createCanvas(1000, 400);
-  pantalla = 2;
+  pantalla = 1;
+  
+  
   
   //escenarios
   mapa1 = new Terreno2D1();
@@ -146,12 +150,12 @@ function draw() {
       enemigo2.show(2,6);
       enemigo2.move(mapa1);
       
-//Llegada al cohete para pasar al siguente nivel
-      LlegadaCohete();
-
  //llamamos la funcion del ataque del enemigo para hacer que el nivel se reinicie     
       AtaqueEnemigo();
       AtaqueEnemigo2();
+
+//Llegada al cohete para pasar al siguente nivel
+      LlegadaCohete();
 
       break;
 //-------------------------------------------------------------
@@ -290,12 +294,20 @@ function keyPressed() {
   function mousePressed(){
       switch(pantalla){
           case 0:
-              //rect(330,250,300,40); rect(773,300,170,60);
+              // rect(773,300,170,60);
               if(mouseX > 773 && mouseX < 943 && mouseY > 300 && mouseY < 360){
                 console.log("se cambió de pantalla");
                   pantalla = 1;    
               }
               break;
+              case 2:
+                //rect(820, 350, 160,20,7);
+                if(mouseX > 820 && mouseX < 980 && mouseY > 350 && mouseY < 370 && pantalla === 2){
+                    console.log(pantalla);
+                      pantalla = 3;    
+                  }
+
+                  break;
       }
       
   }
@@ -452,9 +464,10 @@ function AtaqueEnemigo4() {
                                                 }
  function LlegadaCohete() {
      if (dist(jugador.getX(), jugador.getY(), cohete.getX(), cohete.getY()) < 5) {
-           
-        jugador.reset();
-        pantalla = 3;
+         
+        fill(255);
+        rect(820, 350, 160,20,7);
+        
         
 
     console.log("pantalla3");
