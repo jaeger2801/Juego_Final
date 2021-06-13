@@ -18,10 +18,20 @@ let xPos;
 let yPos;
 let pCol;
 let pFil;
+//Imagenes para el fondo
+let ImgFondo1;
+
+
+function preload(){
+    //Imagenes del personaje
+    //Imagenes fondos
+}
 
 function setup() {
   createCanvas(1000, 400);
-  pantalla = 2;
+  pantalla = 3;
+  //Imagenes
+  ImgFondo1 = new loadImage("data/NeptunoObs.png")
   //escenarios
   mapa1 = new Terreno2D1();
   mapa1.arregloEscaque();
@@ -107,7 +117,7 @@ function draw() {
       break;
 //-------------------------------------------------------------
 //Nivel 2
-     case 3:
+     case 3: //Urano
          mapa1.personalizarParedes2(0);
          jugador.mostrarProtagonista(0,0);
          enemigo3.show(6,9);
@@ -122,7 +132,7 @@ function draw() {
 //---------------------------------------------------------------
 //Nivel 3
 case 4:
-    mapa1.personalizarParedes2(0);
+    mapa1.personalizarParedes3(0);
     jugador.mostrarProtagonista(0,0);
     enemigo5.show(6,9);
     enemigo5.move(mapa1);

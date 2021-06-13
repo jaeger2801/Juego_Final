@@ -30,6 +30,7 @@ arregloEscaque2() {
 }
 //aqui se programan las paredes que tendrá el primer nivel (Neptuno)
 personalizarParedes(pantalla1) { //Programacion del plano de Neptuno
+    
 
     for (let fil = 0; fil < 20; fil++) {
         for (let col = 0; col < 20; col++) {
@@ -127,8 +128,8 @@ personalizarParedes(pantalla1) { //Programacion del plano de Neptuno
     }
 }
 //------------------------------------------------------
-//aqui se programan las paredes que tendrá el segundo  nivel
-personalizarParedes2(pantalla1) {
+//aqui se programan las paredes que tendrá el segundo  nivel (Urano)
+personalizarParedes2(pantalla1) { //Programacion del plano de Urano
 
     for (let fil = 0; fil < 20; fil++) {
         for (let col = 0; col < 20; col++) {
@@ -142,53 +143,81 @@ personalizarParedes2(pantalla1) {
             // seleccionamos algunos [fila][col] --> y, x
             //triangulos de entrada arriba 1
             this.escaque[0][1] = 1;
-            this.escaque[1][2] = 1;
-            this.escaque[2][3] = 1;
             this.escaque[0][2] = 1;
-            this.escaque[1][3] = 1;
-            this.escaque[1][4] = 1;
             this.escaque[0][3] = 1;
-            this.escaque[0][4] = 1;
-            this.escaque[0][5] = 1;
-            //---------------
-            this.escaque[8][1] = 1;
-            this.escaque[7][2] = 1;
+            this.escaque[1][2] = 1;
+            this.escaque[2][0] = 1;
+            this.escaque[4][1] = 1;
+            this.escaque[6][1] = 1;
+            this.escaque[7][1] = 1;
+            this.escaque[7][0] = 1;
+
+            
+            this.escaque[4][3] = 1;
+            this.escaque[5][4] = 1;
             this.escaque[6][3] = 1;
-            //---------------
-            this.escaque[6][9] = 1;
-            this.escaque[7][10] = 1;
-            this.escaque[8][11] = 1;
+
+            this.escaque[2][4] = 1;
+            this.escaque[3][5] = 1;
             //--------------- franja de arriba 2
-            this.escaque[0][11] = 1;
-            this.escaque[1][10] = 1;
-            this.escaque[2][9] = 1;
+            this.escaque[2][6] = 1;
+            this.escaque[4][6] = 1;
+            this.escaque[8][3] = 1;
             //--------------- franja de arriba 3
-            this.escaque[0][14] = 1;
-            this.escaque[1][15] = 1;
+            
+            
             this.escaque[2][16] = 1;
             //---------------
-            this.escaque[6][16] = 1;
-            this.escaque[7][15] = 1;
-            this.escaque[8][14] = 1;
+            
+            this.escaque[7][16] = 1;
+           
             
             //triangulo de abajo
-            this.escaque[8][4] = 1;
-            this.escaque[8][5] = 1;
+            
             this.escaque[8][6] = 1;
-            this.escaque[7][6] = 1;
-            this.escaque[7][5] = 1;
-            this.escaque[6][6] = 1;
             this.escaque[7][7] = 1;
-            this.escaque[8][7] = 1;
+            this.escaque[7][9] = 1;
             this.escaque[8][8] = 1;
-
-            //triangulo de arriba
-            this.escaque[0][17] = 1;
+            this.escaque[8][10] = 1;
+            this.escaque[6][8] = 1;
+            this.escaque[5][8] = 1;
+            this.escaque[5][9] = 1;
+            this.escaque[5][10] = 1;
+            this.escaque[0][7] = 1;
+            this.escaque[1][7] = 1;
+            this.escaque[1][8] = 1;
+            this.escaque[0][11] = 1;
+            this.escaque[1][11] = 1;
+            this.escaque[3][11] = 1;
+            this.escaque[3][12] = 1;
+            this.escaque[3][13] = 1;
+            this.escaque[3][14] = 1;
+            this.escaque[1][13] = 1;
+            this.escaque[2][13] = 1;
+            this.escaque[4][13] = 1;
+            this.escaque[3][9] = 1;
+            this.escaque[6][12] = 1;
+            this.escaque[6][15] = 1;
+            this.escaque[0][15] = 1;
+            this.escaque[1][15] = 1;
+            this.escaque[1][16] = 1;
+            this.escaque[2][16] = 1;
+            this.escaque[3][16] = 1;
+            this.escaque[2][17] = 1;
+            this.escaque[8][15] = 1;
+            this.escaque[8][16] = 1;
+            this.escaque[8][17] = 1;
+            this.escaque[8][19] = 1;
             this.escaque[0][18] = 1;
-            this.escaque[0][19] = 1;
-            this.escaque[1][18] = 1;
-            this.escaque[1][19] = 1;
-            this.escaque[2][19] = 1;
+            this.escaque[5][17] = 1;
+            this.escaque[4][18] = 1;
+            this.escaque[5][19] = 1;
+            this.escaque[5][18] = 1;
+            this.escaque[6][18] = 1;
+            this.escaque[7][18] = 0;
+            
+    
+            
            
             //franja de abajo
             this.escaque[9][0] = 1;
@@ -218,7 +247,7 @@ personalizarParedes2(pantalla1) {
     }
 }
 
-//aqui se programan las paredes que tendrá el segundo  nivel
+//aqui se programan las paredes que tendrá el segundo  nivel ()
 personalizarParedes3(pantalla1) {
 
     for (let fil = 0; fil < 20; fil++) {
