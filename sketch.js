@@ -53,7 +53,7 @@ function preload(){
 
 function setup() {
   createCanvas(1000, 400);
-  pantalla = 2;
+  pantalla = 0;
   
   //escenarios
   mapa1 = new Terreno2D1();
@@ -281,6 +281,8 @@ function keyPressed() {
           break;
           
   }
+  jugador.updateLocation();
+}
   
   function mousePressed(){
       switch(pantalla){
@@ -294,9 +296,10 @@ function keyPressed() {
       }
       
   }
-  jugador.updateLocation();
+
   
-}
+  
+
 
 //Funciones de Vida, moneda y respawn de Neptuno
 //aqui vamos a configurar el ataque del enemigo 1 que está en el nivel 1
