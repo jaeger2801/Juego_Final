@@ -12,6 +12,10 @@ let enemigo4;
 let enemigo5;
 let enemigo6;
 let enemigo7;
+let enemigo8;
+let enemigo9;
+let enemigo10;
+let enemigo11;
 //ajustes
 let ancho;
 let xPos;
@@ -32,7 +36,7 @@ function preload(){
 
 function setup() {
   createCanvas(1000, 400);
-  pantalla = 2;
+  pantalla = 5;
   
   //escenarios
   mapa1 = new Terreno2D1();
@@ -43,6 +47,7 @@ function setup() {
   //personajes
   jugador = new Player(0,0);
   jugador2 = new Player2(0,0);
+  //Nivel1
   enemigo = new Enemy(2,17);
   enemigo2 = new Enemy2(2,6);
   //Nivel 2
@@ -52,6 +57,11 @@ function setup() {
   enemigo5 = new Enemy5(6,9);
   enemigo6 = new Enemy6(6,9);
   enemigo7 = new Enemy7(6,9);
+  //Nivel4
+  enemigo8 = new Enemy8(6,11);
+  enemigo9 = new Enemy9(5,8);
+  enemigo10 = new Enemy10(2,8);
+  enemigo11 = new Enemy11(7,4);
   //ajustes
   ancho = 20;
 }
@@ -145,11 +155,32 @@ image(ImgFondo3, 0, 0, 800, 400);
     enemigo7.show(6,9);
     enemigo7.move(mapa1);
 
+    //Enemigos de Saturno
     AtaqueEnemigo5();
     AtaqueEnemigo6();
     AtaqueEnemigo7();
 
     break;
+    //-----------------------------------------------------------
+    //Nivel 4
+    case 5://Jupiter
+    mapa1.personalizarParedes4(0);
+    jugador.mostrarProtagonista(0,0);
+    enemigo8.show(6,9);
+    enemigo8.move(mapa1);
+    enemigo9.show(9,9);
+    enemigo9.move(mapa1)
+    enemigo10.show(6,9);
+    enemigo10.move(mapa1);
+    enemigo11.show(6,9);
+    enemigo11.move(mapa1);
+
+    AtaqueEnemigo8();
+    AtaqueEnemigo9();
+    AtaqueEnemigo10();
+    AtaqueEnemigo11();
+
+        break;
   }
 }
 function keyPressed() {
@@ -274,4 +305,35 @@ function AtaqueEnemigo4() {
                     console.log("se la comió");
                 }
                 }
-  
+        function AtaqueEnemigo8() {
+            if (dist(jugador.getX(), jugador.getY(), enemigo8.getX(), enemigo8.getY()) < 5) {
+                
+                jugador.reset();
+                enemigo8.init();
+                console.log("se la comió");
+            }
+            }
+            function AtaqueEnemigo9() {
+                if (dist(jugador.getX(), jugador.getY(), enemigo9.getX(), enemigo9.getY()) < 5) {
+                    
+                    jugador.reset();
+                    enemigo9.init();
+                    console.log("se la comió");
+                }
+                }
+                function AtaqueEnemigo10() {
+                    if (dist(jugador.getX(), jugador.getY(), enemigo10.getX(), enemigo10.getY()) < 5) {
+                        
+                        jugador.reset();
+                        enemigo10.init();
+                        console.log("se la comió");
+                    }
+                    }
+                    function AtaqueEnemigo11() {
+                        if (dist(jugador.getX(), jugador.getY(), enemigo11.getX(), enemigo11.getY()) < 5) {
+                            
+                            jugador.reset();
+                            enemigo11.init();
+                            console.log("se la comió");
+                        }
+                        }

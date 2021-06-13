@@ -370,6 +370,125 @@ this.escaque[9][19] = 1;
     }
 }
 
+//aqui se programan las paredes que tendrá el cuarto nivel (jupiter)
+personalizarParedes4(pantalla1) {//Programacion del plano de Jupiter
+
+    for (let fil = 0; fil < 20; fil++) {
+        for (let col = 0; col < 20; col++) {
+
+            switch (pantalla1){
+                case 0:
+                    // seleccionamos algunos [fila][col] --> y, x
+//Primera linea
+            this.escaque[0][0] = 1;
+            this.escaque[0][7] = 1;
+            this.escaque[0][9] = 1;
+            this.escaque[0][11] = 1;
+            this.escaque[0][14] = 1;
+            this.escaque[0][15] = 1;
+            this.escaque[0][16] = 1;
+            this.escaque[0][17] = 1;
+//segunda linea
+            this.escaque[1][2] = 1;
+            this.escaque[1][3] = 1;
+            this.escaque[1][5] = 1;
+            this.escaque[1][7] = 1;
+            this.escaque[1][10] = 1;
+            this.escaque[1][11] = 1;
+            this.escaque[1][14] = 1;
+            this.escaque[1][16] = 1;
+//tercera linea
+            this.escaque[2][1] = 1;
+            this.escaque[2][2] = 1;
+            this.escaque[2][5] = 1;
+            this.escaque[2][12] = 1;
+            this.escaque[2][14] = 1;
+            this.escaque[2][18] = 1;
+            this.escaque[2][19] = 1;
+
+//Cuarta linea
+            this.escaque[3][4] = 1;
+            this.escaque[3][5] = 1;
+            this.escaque[3][9] = 1;
+            this.escaque[3][14] = 1;
+            this.escaque[3][16] = 1;
+            this.escaque[3][19] = 1;
+//Quinta linea
+            this.escaque[4][1] = 1;
+            this.escaque[4][5] = 1;
+            this.escaque[4][6] = 1;
+            this.escaque[4][12] = 1;
+            this.escaque[4][15] = 1;
+            this.escaque[4][16] = 1;
+            this.escaque[4][17] = 1;
+//Sexta linea
+            this.escaque[5][1] = 1;
+            this.escaque[5][2] = 1;
+            this.escaque[5][10] = 1;
+            this.escaque[5][14] = 1;
+//Septima Linea
+            this.escaque[6][3] = 1;
+            this.escaque[6][6] = 1;
+            this.escaque[6][10] = 1;
+            this.escaque[6][15] = 1;
+            this.escaque[6][17] = 1;
+//Octava lionea
+            this.escaque[7][1] = 1;
+            this.escaque[7][2] = 1;
+            this.escaque[7][9] = 1;
+            this.escaque[7][11] = 1;
+            this.escaque[7][17] = 1;
+            this.escaque[7][18] = 1;
+            this.escaque[7][19] = 1;
+//Novena linea
+this.escaque[8][2] = 1;
+this.escaque[8][1] = 1;
+this.escaque[8][3] = 1;
+this.escaque[8][8] = 1;
+this.escaque[8][10] = 1;
+this.escaque[8][11] = 1;
+this.escaque[8][15] = 1;
+//Decima linea
+this.escaque[9][5] = 1;
+this.escaque[9][7] = 1;
+this.escaque[9][8] = 1;
+this.escaque[9][10] = 1;
+this.escaque[9][11] = 1;
+this.escaque[9][13] = 1;
+this.escaque[9][15] = 1;
+this.escaque[9][16] = 1;
+this.escaque[9][17] = 1;
+
+          
+           
+            //franja de abajo
+            this.escaque[10][0] = 1;
+            this.escaque[10][1] = 1;
+            this.escaque[10][2] = 1;
+            this.escaque[10][3] = 1;
+            this.escaque[10][4] = 1;
+            this.escaque[10][5] = 1;
+            this.escaque[10][6] = 1;
+            this.escaque[10][7] = 1;
+            this.escaque[10][8] = 1;
+            this.escaque[10][10] = 1;
+            this.escaque[10][10] = 1;
+            this.escaque[10][11] = 1;
+            this.escaque[10][12] = 1;
+            this.escaque[10][13] = 1;
+            this.escaque[10][14] = 1;
+            this.escaque[10][15] = 1;
+            this.escaque[10][16] = 1;
+            this.escaque[10][17] = 1;
+            this.escaque[10][18] = 1;
+            this.escaque[10][19] = 1;
+
+                    break;
+            }
+        }
+    }
+}
+
 mostrar(pantalla1) {
 
      // pintamos basados en los valores de la matriz
