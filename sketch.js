@@ -20,18 +20,20 @@ let pCol;
 let pFil;
 //Imagenes para el fondo
 let ImgFondo1;
+let ImgFondo3;
 
 
 function preload(){
     //Imagenes del personaje
     //Imagenes fondos
+    ImgFondo3 = new loadImage("data/MapaSaturno.png")
+
 }
 
 function setup() {
   createCanvas(1000, 400);
-  pantalla = 3;
-  //Imagenes
-  ImgFondo1 = new loadImage("data/NeptunoObs.png")
+  pantalla = 2;
+  
   //escenarios
   mapa1 = new Terreno2D1();
   mapa1.arregloEscaque();
@@ -45,11 +47,11 @@ function setup() {
   enemigo2 = new Enemy2(2,6);
   //Nivel 2
   enemigo3 = new Enemy3(6,9);
-  enemigo4 = new Enemy3(8,3);
+  enemigo4 = new Enemy4(8,3);
   //Nivel 3
-  enemigo5 = new Enemy3(6,9);
-  enemigo6 = new Enemy3(6,9);
-  enemigo7 = new Enemy3(6,9);
+  enemigo5 = new Enemy5(6,9);
+  enemigo6 = new Enemy6(6,9);
+  enemigo7 = new Enemy7(6,9);
   //ajustes
   ancho = 20;
 }
@@ -131,7 +133,9 @@ function draw() {
          break;
 //---------------------------------------------------------------
 //Nivel 3
-case 4:
+case 4://Saturno
+imageMode(CORNER);
+image(ImgFondo3, 0, 0, 800, 400);
     mapa1.personalizarParedes3(0);
     jugador.mostrarProtagonista(0,0);
     enemigo5.show(6,9);
@@ -140,6 +144,10 @@ case 4:
     enemigo6.move(mapa1);
     enemigo7.show(6,9);
     enemigo7.move(mapa1);
+
+    AtaqueEnemigo5();
+    AtaqueEnemigo6();
+    AtaqueEnemigo7();
 
     break;
   }
@@ -199,6 +207,8 @@ function keyPressed() {
   jugador.updateLocation();
   
 }
+
+//Funciones de Vida, moneda y respawn de Neptuno
 //aqui vamos a configurar el ataque del enemigo 1 que está en el nivel 1
 function AtaqueEnemigo() {
     if (dist(jugador.getX(), jugador.getY(), enemigo.getX(), enemigo.getY()) < 5) {
@@ -218,6 +228,7 @@ function AtaqueEnemigo2() {
     }
     }
 
+    //Funciones de Vida, moneda y respawn de Urano
 ////aqui vamos a configurar el ataque del enemigo 3 que está en el nivel 2
 function AtaqueEnemigo3() {
     if (dist(jugador.getX(), jugador.getY(), enemigo3.getX(), enemigo3.getY()) < 5) {
@@ -238,5 +249,29 @@ function AtaqueEnemigo4() {
     }
     }
 
-
+    //Funciones de Vida, moneda y respawn de Saturno
+    function AtaqueEnemigo5() {
+        if (dist(jugador.getX(), jugador.getY(), enemigo5.getX(), enemigo5.getY()) < 5) {
+            
+            jugador.reset();
+            enemigo5.init();
+            console.log("se la comió");
+        }
+        }
+        function AtaqueEnemigo6() {
+            if (dist(jugador.getX(), jugador.getY(), enemigo6.getX(), enemigo6.getY()) < 5) {
+                
+                jugador.reset();
+                enemigo6.init();
+                console.log("se la comió");
+            }
+            }
+            function AtaqueEnemigo7() {
+                if (dist(jugador.getX(), jugador.getY(), enemigo7.getX(), enemigo7.getY()) < 5) {
+                    
+                    jugador.reset();
+                    enemigo7.init();
+                    console.log("se la comió");
+                }
+                }
   
