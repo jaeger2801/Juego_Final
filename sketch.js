@@ -33,6 +33,8 @@ let yPos;
 let pCol;
 let pFil;
 //Imagenes para el fondo
+let ImgInicio;
+let ImgCarga;
 let ImgFondo1;
 let ImgFondo2;
 let ImgFondo3;
@@ -43,6 +45,8 @@ let ImgFondo5;
 function preload(){
     //Imagenes del personaje
     //Imagenes fondos
+    ImgCarga = new loadImage("data/IntroMilkyCargando.png")
+    ImgInicio = new loadImage("data/IntroMilkyWar.png")
     ImgFondo1 = new loadImage("data/MapaNeptuno.png")
     ImgFondo2 = new loadImage("data/MapaUrano.png")
     ImgFondo3 = new loadImage("data/MapaSaturno.png")
@@ -100,27 +104,20 @@ function draw() {
 
   switch(pantalla){
       case 0:
-          //espacio para poner la imagen inicial del juego
-          noStroke();
-          fill(255,0,255);
-          rect(0,0,1000,400);
-
-          fill(0);
-          textSize(60);
-          text("Aqui va el titulo del juego", 170, 150);
-          //boton para seguir
-          fill(0);
-          rect(330,250,300,40);
-
-
-
+        fill(0, 0, 0,);
+        rect(773,300,170,60);
+        imageMode(CORNER);
+        image(ImgInicio, 0, 0, 1000, 400);
+          
           break;
 //---------------------------------------------------------------------------------------
           case 1:
-           background(242,159,5);
-           noStroke();
+              imageMode(CORNER);
+              image(ImgCarga, 0, 0, 1000, 400);
+          
 	        fill(255);
-	        rect(300, 250, ancho+5, 30, 8);
+            noStroke();
+	        rect(300, 330, ancho+10, 10, 8);
 	
 	
 	if(frameCount%60 == 0) {
@@ -132,16 +129,19 @@ function draw() {
 		}
 	}
             break;
+ //-----------------------------------------------------
     case 2:
        //Neptuno 
-       imageMode(CORNER);
-image(ImgFondo1, 0, 0, 800, 400);
+      imageMode(CORNER);
+      image(ImgFondo1, 0, 0, 800, 400);
       mapa1.personalizarParedes(0);
       jugador.mostrarProtagonista(0,0);
       enemigo.show(3,0);
       enemigo.move(mapa1);
       enemigo2.show(2,6);
-         enemigo2.move(mapa1);
+      enemigo2.move(mapa1);
+
+        
 
 
  //llamamos la funcion del ataque del enemigo para hacer que el nivel se reinicie     
@@ -183,6 +183,8 @@ image(ImgFondo3, 0, 0, 800, 400);
     enemigo6.move(mapa1);
     enemigo7.show(6,9);
     enemigo7.move(mapa1);
+
+    
 
     //Enemigos de Saturno
     AtaqueEnemigo5();
@@ -287,8 +289,8 @@ function keyPressed() {
   function mousePressed(){
       switch(pantalla){
           case 0:
-              //rect(330,250,300,40);
-              if(mouseX > 330 && mouseX < 630 && mouseY > 250 && mouseY < 290){
+              //rect(330,250,300,40); rect(773,300,170,60);
+              if(mouseX > 773 && mouseX < 943 && mouseY > 300 && mouseY < 360){
                 console.log("se cambió de pantalla");
                   pantalla = 1;    
               }
