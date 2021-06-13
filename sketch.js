@@ -26,6 +26,8 @@ let enemigo14;
 let enemigo15;
 let enemigo16;
 let enemigo17;
+//Cohete
+let cohete;
 //ajustes
 let ancho;
 let xPos;
@@ -57,13 +59,12 @@ function preload(){
 
 function setup() {
   createCanvas(1000, 400);
-  pantalla = 0;
+  pantalla = 2;
   
   //escenarios
   mapa1 = new Terreno2D1();
   mapa1.arregloEscaque();
-  mapa2 = new Terreno2();
-  mapa2.arregloEscaque2();
+  
   
   //personajes
   jugador = new Player(0,0);
@@ -90,6 +91,8 @@ function setup() {
   enemigo15 = new Enemy15(9,4);
   enemigo16 = new Enemy16(4,8);
   enemigo17 = new Enemy17(4,6);
+  //cohete
+  cohete = new Cohete(1,1);
 
   //ajustes
   ancho = 20;
@@ -124,41 +127,39 @@ function draw() {
 		ancho +=40;
 		
 		if(ancho>=340) {
-			pantalla = 3;
+			pantalla = 2;
 			ancho = 0;
 		}
 	}
             break;
  //-----------------------------------------------------
+ //Primer Nivel Neptuno
     case 2:
        //Neptuno 
       imageMode(CORNER);
       image(ImgFondo1, 0, 0, 800, 400);
       mapa1.personalizarParedes(0);
+      cohete.show(0,1);
       jugador.mostrarProtagonista(0,0);
       enemigo.show(3,0);
       enemigo.move(mapa1);
       enemigo2.show(2,6);
       enemigo2.move(mapa1);
-
-        
-
+      
+//Llegada al cohete para pasar al siguente nivel
+      LlegadaCohete();
 
  //llamamos la funcion del ataque del enemigo para hacer que el nivel se reinicie     
       AtaqueEnemigo();
       AtaqueEnemigo2();
 
-      
-      /*for(let i = 0; i < enemigo.length; i++){
-          enemigo[i].mostrarEnemigo();
-          enemigo[i].moveEnemy(mapa1);
-      }*/
       break;
 //-------------------------------------------------------------
 //Nivel 2
      case 3: //Urano
-     imageMode(CORNER);
-     image(ImgFondo2, 0, 0, 800, 400);
+     //imageMode(CORNER);
+     //image(ImgFondo2, 0, 0, 800, 400);
+     
          mapa1.personalizarParedes2(0);
          jugador.mostrarProtagonista(0,0);
          enemigo3.show(6,9);
@@ -449,3 +450,15 @@ function AtaqueEnemigo4() {
                                                     console.log("se la comió");
                                                 }
                                                 }
+ function LlegadaCohete() {
+     if (dist(jugador.getX(), jugador.getY(), cohete.getX(), cohete.getY()) < 5) {
+           
+        jugador.reset();
+        pantalla = 3;
+        
+
+    console.log("pantalla3");
+                                                    
+     }
+    } 
+      console.log("pantalla2");                                          
