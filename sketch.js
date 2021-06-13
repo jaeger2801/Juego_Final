@@ -7,15 +7,25 @@ let jugador;
 let jugador2;
 let enemigo;
 let enemigo2;
+//---------------------
 let enemigo3;
 let enemigo4;
+//---------------------
 let enemigo5;
 let enemigo6;
 let enemigo7;
+//---------------
 let enemigo8;
 let enemigo9;
 let enemigo10;
 let enemigo11;
+//---------------------
+let enemigo12;
+let enemigo13;
+let enemigo14;
+let enemigo15;
+let enemigo16;
+let enemigo17;
 //ajustes
 let ancho;
 let xPos;
@@ -24,19 +34,26 @@ let pCol;
 let pFil;
 //Imagenes para el fondo
 let ImgFondo1;
+let ImgFondo2;
 let ImgFondo3;
+let ImgFondo4;
+let ImgFondo5;
 
 
 function preload(){
     //Imagenes del personaje
     //Imagenes fondos
+    ImgFondo1 = new loadImage("data/MapaNeptuno.png")
+    ImgFondo2 = new loadImage("data/MapaUrano.png")
     ImgFondo3 = new loadImage("data/MapaSaturno.png")
+    ImgFondo4 = new loadImage("data/MapaJupiter.png")
+    ImgFondo5 = new loadImage("data/MapaMarte.png")
 
 }
 
 function setup() {
   createCanvas(1000, 400);
-  pantalla = 5;
+  pantalla = 6;
   
   //escenarios
   mapa1 = new Terreno2D1();
@@ -62,6 +79,14 @@ function setup() {
   enemigo9 = new Enemy9(5,8);
   enemigo10 = new Enemy10(2,8);
   enemigo11 = new Enemy11(7,4);
+  //Nivel 5
+  enemigo12 = new Enemy12(2,14);
+  enemigo13 = new Enemy13(4,10);
+  enemigo14 = new Enemy14(4,9);
+  enemigo15 = new Enemy15(9,4);
+  enemigo16 = new Enemy16(4,8);
+  enemigo17 = new Enemy17(4,6);
+
   //ajustes
   ancho = 20;
 }
@@ -109,6 +134,8 @@ function draw() {
             break;
     case 2:
        //Neptuno 
+       imageMode(CORNER);
+image(ImgFondo1, 0, 0, 800, 400);
       mapa1.personalizarParedes(0);
       jugador.mostrarProtagonista(0,0);
       enemigo.show(3,0);
@@ -130,6 +157,8 @@ function draw() {
 //-------------------------------------------------------------
 //Nivel 2
      case 3: //Urano
+     imageMode(CORNER);
+     image(ImgFondo2, 0, 0, 800, 400);
          mapa1.personalizarParedes2(0);
          jugador.mostrarProtagonista(0,0);
          enemigo3.show(6,9);
@@ -164,8 +193,10 @@ image(ImgFondo3, 0, 0, 800, 400);
     //-----------------------------------------------------------
     //Nivel 4
     case 5://Jupiter
+   imageMode(CORNER);
+   image(ImgFondo4, 0, 0, 800, 400);
     mapa1.personalizarParedes4(0);
-    jugador.mostrarProtagonista(0,0);
+    jugador.mostrarProtagonista(1,0);
     enemigo8.show(6,9);
     enemigo8.move(mapa1);
     enemigo9.show(9,9);
@@ -181,6 +212,34 @@ image(ImgFondo3, 0, 0, 800, 400);
     AtaqueEnemigo11();
 
         break;
+ //----------------------------------------------------------------
+ //Nivel5
+ case 6:
+    imageMode(CORNER);
+    image(ImgFondo5, 0, 0, 800, 400);
+     mapa1.personalizarParedes5(0);
+     jugador.mostrarProtagonista(0,0);
+     enemigo12.show(6,9);
+     enemigo12.move(mapa1);
+     enemigo13.show(3,9);
+     enemigo13.move(mapa1)
+     enemigo14.show(6,9);
+     enemigo14.move(mapa1);
+     enemigo15.show(6,9);
+     enemigo15.move(mapa1);
+     enemigo16.show(6,9);
+     enemigo16.move(mapa1);
+     enemigo17.show(6,9);
+     enemigo17.move(mapa1);
+
+     AtaqueEnemigo12();
+     AtaqueEnemigo13();
+     AtaqueEnemigo14();
+     AtaqueEnemigo15();
+     AtaqueEnemigo16();
+     AtaqueEnemigo17();
+     
+     break;
   }
 }
 function keyPressed() {
@@ -337,3 +396,51 @@ function AtaqueEnemigo4() {
                             console.log("se la comió");
                         }
                         }
+                        function AtaqueEnemigo12() {
+                            if (dist(jugador.getX(), jugador.getY(), enemigo12.getX(), enemigo12.getY()) < 5) {
+                                
+                               jugador.reset();
+                                enemigo12.init();
+                                console.log("se la comió");
+                            }
+                            }
+                            function AtaqueEnemigo13() {
+                                if (dist(jugador.getX(), jugador.getY(), enemigo13.getX(), enemigo13.getY()) < 5) {
+                                    
+                                    jugador.reset();
+                                    enemigo13.init();
+                                    console.log("se la comió");
+                                }
+                                }
+                                function AtaqueEnemigo14() {
+                                    if (dist(jugador.getX(), jugador.getY(), enemigo14.getX(), enemigo14.getY()) < 5) {
+                                        
+                                        jugador.reset();
+                                        enemigo14.init();
+                                        console.log("se la comió");
+                                    }
+                                    }
+                                    function AtaqueEnemigo15() {
+                                        if (dist(jugador.getX(), jugador.getY(), enemigo15.getX(), enemigo15.getY()) < 5) {
+                                            
+                                            jugador.reset();
+                                            enemigo15.init();
+                                            console.log("se la comió");
+                                        }
+                                        }
+                                        function AtaqueEnemigo16() {
+                                            if (dist(jugador.getX(), jugador.getY(), enemigo16.getX(), enemigo16.getY()) < 5) {
+                                                
+                                                jugador.reset();
+                                                enemigo16.init();
+                                                console.log("se la comió");
+                                            }
+                                            }
+                                            function AtaqueEnemigo17() {
+                                                if (dist(jugador.getX(), jugador.getY(), enemigo17.getX(), enemigo17.getY()) < 5) {
+                                                    
+                                                    jugador.reset();
+                                                    enemigo17.init();
+                                                    console.log("se la comió");
+                                                }
+                                                }
