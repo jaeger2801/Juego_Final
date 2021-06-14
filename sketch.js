@@ -2,8 +2,8 @@
 let mapa1;
 let mapa2;
 let pantalla;
-
-
+//Moneda
+let moneda;
 //personajes
 let jugador;
 let jugador2;
@@ -68,8 +68,8 @@ function setup() {
   //escenarios
   mapa1 = new Terreno2D1();
   mapa1.arregloEscaque();
-  
-  
+  //Moneda
+  moneda = new Moneda(2,1);
   //personajes
   jugador = new Player(0,0);
   jugador2 = new Player2(0,0);
@@ -142,7 +142,7 @@ function draw() {
       imageMode(CORNER);
       image(ImgFondo1, 0, 0, 800, 400);
       mapa1.personalizarParedes(0);
-      cohete.show(0,1);
+      cohete.show(1,1);
       jugador.mostrarProtagonista(0,0);
       enemigo.show(3,0);
       enemigo.move(mapa1);
@@ -154,7 +154,7 @@ function draw() {
       AtaqueEnemigo2();
 
 //Llegada al cohete para pasar al siguente nivel
-      LlegadaCohete();
+      mapa1.LlegadaCohete();
 
       break;
 //-------------------------------------------------------------
@@ -163,7 +163,7 @@ function draw() {
      //imageMode(CORNER);
      //image(ImgFondo2, 0, 0, 800, 400);
      
-         mapa1.personalizarParedes2(0);
+         mapa1.personalizarParedes2(1);
          jugador.mostrarProtagonista(0,0);
          enemigo3.show(6,9);
          enemigo3.move(mapa1);
@@ -461,18 +461,5 @@ function AtaqueEnemigo4() {
                                                     console.log("se la comió");
                                                 }
                                                 }
- function LlegadaCohete() {
-     if (dist(jugador.getX(), jugador.getY(), cohete.getX(), cohete.getY()) < 5) {
-         
-        //fill(255);
-        //rect(820, 350, 160,20,7);
-        jugador.reset();
-        pantalla = 3;
-        
-        
-
-    console.log("pantalla3");
-                                                    
-     }
-    } 
+  
       console.log("pantalla2");                                         

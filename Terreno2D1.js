@@ -634,5 +634,13 @@ getLocacion(newFil, newCol){
     return this.escaque[newFil][newCol];
 
 }
+LlegadaCohete() {
+    if (dist(jugador.getX(), jugador.getY(), cohete.getX(), cohete.getY()) < 5) {
+
+       jugador.reset();
+       pantalla = 3;
+                                                  
+    }
+   }
 
 }

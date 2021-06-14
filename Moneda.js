@@ -1,4 +1,4 @@
-class Premio {
+class Moneda {
 
     constructor(monedaFil, monedaCol, imgMoneda, tipoMoneda){
         this.monedaX = (monedaCol * 40) + 20;
@@ -10,11 +10,12 @@ class Premio {
  
     }
 
-    pintar() {
+
+    mostrarMonedas() {
         imageMode(CENTER);
         this.premioX = (this.premioCol * 100) + 50; 
         this.premioY = (this.premioFil * 100) + 50;
-        image(this.imgPremio, this.premioX, this.premioY);
+        rect(20, 20 ,20, 20);
     }
 
     getMonedaCol(){
