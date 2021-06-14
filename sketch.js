@@ -80,7 +80,7 @@ function preload(){
 
 function setup() {
   createCanvas(1000, 400);
-  pantalla = 2;
+  pantalla = 4;
   
   
   
