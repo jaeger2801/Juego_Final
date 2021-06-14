@@ -266,11 +266,16 @@ personalizarParedes2(Nivel2) { //Programacion del plano de Urano
 //aqui se programan las paredes que tendrá el segundo  nivel (Saturno)
 personalizarParedes3(Nivel3) {//Programacion del plano de Saturno
 
+    this.escaque = [];
+    this.arregloEscaque();
+    this.escaque2 = [];
+    this.arregloEscaque2();
+    
     for (let fil = 0; fil < 20; fil++) {
         for (let col = 0; col < 20; col++) {
 
             switch (Nivel3){
-                case 0:
+                case 2:
                     // seleccionamos algunos [fila][col] --> y, x
 //Primera linea
             this.escaque[0][1] = 1;
@@ -359,7 +364,7 @@ this.escaque[9][19] = 1;
             this.escaque[10][6] = 1;
             this.escaque[10][7] = 1;
             this.escaque[10][8] = 1;
-            this.escaque[10][10] = 1;
+            this.escaque[10][9] = 1;
             this.escaque[10][10] = 1;
             this.escaque[10][11] = 1;
             this.escaque[10][12] = 1;
@@ -380,11 +385,16 @@ this.escaque[9][19] = 1;
 //aqui se programan las paredes que tendrá el cuarto nivel (jupiter)
 personalizarParedes4(Nivel4) {//Programacion del plano de Jupiter
 
+    this.escaque = [];
+    this.arregloEscaque();
+    this.escaque2 = [];
+    this.arregloEscaque2();
+
     for (let fil = 0; fil < 20; fil++) {
         for (let col = 0; col < 20; col++) {
 
             switch (Nivel4){
-                case 0:
+                case 3:
                     // seleccionamos algunos [fila][col] --> y, x
 //Primera linea
             this.escaque[0][0] = 1;
@@ -412,7 +422,7 @@ personalizarParedes4(Nivel4) {//Programacion del plano de Jupiter
             this.escaque[2][12] = 1;
             this.escaque[2][14] = 1;
             this.escaque[2][18] = 1;
-            this.escaque[2][19] = 1;
+            
 
 //Cuarta linea
             this.escaque[3][4] = 1;
@@ -420,7 +430,7 @@ personalizarParedes4(Nivel4) {//Programacion del plano de Jupiter
             this.escaque[3][9] = 1;
             this.escaque[3][14] = 1;
             this.escaque[3][16] = 1;
-            this.escaque[3][19] = 1;
+            this.escaque[3][18] = 1;
 //Quinta linea
             this.escaque[4][0] = 1;
             this.escaque[4][5] = 1;
@@ -499,12 +509,16 @@ this.escaque[9][17] = 1;
 
 //aqui se programan las paredes que tendrá el cuarto nivel (marte)
 personalizarParedes5(Nivel5) {//Programacion del plano de marte
+    this.escaque = [];
+    this.arregloEscaque();
+    this.escaque2 = [];
+    this.arregloEscaque2();
 
     for (let fil = 0; fil < 20; fil++) {
         for (let col = 0; col < 20; col++) {
 
             switch (Nivel5){
-                case 0:
+                case 4:
                     // seleccionamos algunos [fila][col] --> y, x
 //Primera linea
             this.escaque[0][5] = 1;
@@ -644,6 +658,39 @@ LlegadaCohete() {
 
        jugador.reset();
        pantalla = 3;
+                                                  
+    }
+   }
+
+   LlegadaCohete2() {
+    if (dist(jugador.getX(), jugador.getY(), cohete.getX(), cohete.getY()) < 5) {
+
+       jugador.reset();
+       pantalla = 4;
+                                                  
+    }
+   }
+   LlegadaCohete3() {
+    if (dist(jugador.getX(), jugador.getY(), cohete.getX(), cohete.getY()) < 5) {
+
+       jugador.reset();
+       pantalla = 5;
+                                                  
+    }
+   }
+   LlegadaCohete4() {
+    if (dist(jugador.getX(), jugador.getY(), cohete2.getX(), cohete2.getY()) < 5) {
+
+       jugador.reset();
+       pantalla = 6;
+                                                  
+    }
+   }
+   LlegadaCohete5() {
+    if (dist(jugador.getX(), jugador.getY(), cohete2.getX(), cohete2.getY()) < 5) {
+
+       jugador.reset();
+       pantalla = 7;
                                                   
     }
    }

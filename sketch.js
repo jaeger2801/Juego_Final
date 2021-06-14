@@ -30,6 +30,7 @@ let enemigo16;
 let enemigo17;
 //Cohete
 let cohete;
+let cohete2;
 //ajustes
 let ancho;
 let xPos;
@@ -61,7 +62,7 @@ function preload(){
 
 function setup() {
   createCanvas(1000, 400);
-  pantalla = 2;
+  pantalla = 0;
   
   
   
@@ -96,14 +97,15 @@ function setup() {
   enemigo16 = new Enemy16(4,8);
   enemigo17 = new Enemy17(4,6);
   //cohete
-  cohete = new Cohete(1,1);
+  cohete = new Cohete(9,17);
+  cohete2 = new Cohete2(1,15);
 
   //ajustes
   ancho = 20;
 }
 
 function draw() {
-  background(200); 
+  background(20); 
   
   mapa1.mostrar();
   
@@ -126,7 +128,7 @@ function draw() {
 	        rect(300, 330, ancho+10, 10, 8);
 	
 	
-	if(frameCount%10 == 0) {
+	if(frameCount%50 == 0) {
 		ancho +=40;
 		
 		if(ancho>=340) {
@@ -164,6 +166,7 @@ function draw() {
      image(ImgFondo2, 0, 0, 800, 400);
      
          mapa1.personalizarParedes2(1);
+         cohete.show(1,1);
          jugador.mostrarProtagonista(0,0);
          enemigo3.show(6,9);
          enemigo3.move(mapa1);
@@ -173,13 +176,17 @@ function draw() {
 //llamamos la funcion del ataque del enemigo para hacer que el nivel se reinicie
       AtaqueEnemigo3();
       AtaqueEnemigo4();
+
+      //Llegada al cohete para pasar al siguente nivel
+      mapa1.LlegadaCohete2();
          break;
 //---------------------------------------------------------------
 //Nivel 3
 case 4://Saturno
 imageMode(CORNER);
 image(ImgFondo3, 0, 0, 800, 400);
-    mapa1.personalizarParedes3(0);
+    mapa1.personalizarParedes3(2);
+    cohete.show(1,1);
     jugador.mostrarProtagonista(0,0);
     enemigo5.show(6,9);
     enemigo5.move(mapa1);
@@ -195,13 +202,17 @@ image(ImgFondo3, 0, 0, 800, 400);
     AtaqueEnemigo6();
     AtaqueEnemigo7();
 
+    //Llegada al cohete para pasar al siguente nivel
+    mapa1.LlegadaCohete3();
+
     break;
     //-----------------------------------------------------------
     //Nivel 4
     case 5://Jupiter
    imageMode(CORNER);
    image(ImgFondo4, 0, 0, 800, 400);
-    mapa1.personalizarParedes4(0);
+    mapa1.personalizarParedes4(3);
+    cohete2.show(1,1);
     jugador.mostrarProtagonista(1,0);
     enemigo8.show(6,9);
     enemigo8.move(mapa1);
@@ -216,6 +227,8 @@ image(ImgFondo3, 0, 0, 800, 400);
     AtaqueEnemigo9();
     AtaqueEnemigo10();
     AtaqueEnemigo11();
+    //Llegada al cohete para pasar al siguente nivel
+    mapa1.LlegadaCohete4();
 
         break;
  //----------------------------------------------------------------
@@ -223,7 +236,8 @@ image(ImgFondo3, 0, 0, 800, 400);
  case 6:
     imageMode(CORNER);
     image(ImgFondo5, 0, 0, 800, 400);
-     mapa1.personalizarParedes5(0);
+     mapa1.personalizarParedes5(4);
+     cohete2.show(1,1);
      jugador.mostrarProtagonista(0,0);
      enemigo12.show(6,9);
      enemigo12.move(mapa1);
@@ -244,8 +258,31 @@ image(ImgFondo3, 0, 0, 800, 400);
      AtaqueEnemigo15();
      AtaqueEnemigo16();
      AtaqueEnemigo17();
+
+     mapa1.LlegadaCohete5();
      
      break;
+     case 7:
+         background(20);
+         fill(255);
+         rect(1000, 400, 0, 0);
+
+         fill(255);
+         textSize(30);
+         text("Gracias por jugar, eres genial :D", 250, 200);
+
+         fill(255);
+         textSize(20);
+         text("Jugar de nuevo", 370, 270);
+
+         noFill();
+         stroke(255);
+         strokeWeight(6);
+         rect(300, 250, 330, 30, 6);
+
+         
+
+         break;
   }
 }
 function keyPressed() {
@@ -307,9 +344,16 @@ function keyPressed() {
                   }
 
                   break;
+                  case 7:
+                      //rect(300, 250, 330, 30, 6);
+                      if(mouseX > 300 && mouseX < 630 && mouseY > 250 && mouseY < 280 && pantalla === 7){
+                        console.log(pantalla);
+                          pantalla = 0; 
+                      break;
       }
       
   }
+}
 
   
   
@@ -462,4 +506,5 @@ function AtaqueEnemigo4() {
                                                 }
                                                 }
   
-      console.log("pantalla2");                                         
+      
+                                                                                 
