@@ -9,8 +9,8 @@ class Pista {
     //pista de Neptuno
     show () {
         
-        imageMode(CENTER);
-        image(ImgNave,this.pistaPosX, this.pistaPosY,40, 40);
+        fill(20);
+        ellipse(this.pistaPosX, this.pistaPosY,30, 30);
     }
      
     getX () {
@@ -22,7 +22,11 @@ class Pista {
     verPista() {
         if (dist(jugador.getX(), jugador.getY(), pista.getX(), pista.getY()) < 5) {
             
-            pantalla = 13;
+            
+            fill(255);
+            rect(830, 350, 140, 20, 6)
+
+            
             
             console.log("se la comió");
         }

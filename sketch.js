@@ -37,6 +37,7 @@ let xPos;
 let yPos;
 let pCol;
 let pFil;
+let pista;
 //Imagenes para el fondo
 let ImgInicio;
 let ImgCarga;
@@ -80,7 +81,7 @@ function preload(){
 
 function setup() {
   createCanvas(1000, 400);
-  pantalla = 0;
+  pantalla = 8;
   
   
   
@@ -120,6 +121,7 @@ function setup() {
 
   //ajustes
   ancho = 20;
+  pista = new Pista(3,0);
 }
 
 function draw() {
@@ -165,12 +167,15 @@ function draw() {
       image(ImgFondo1, 0, 0, 800, 400);
       moneda.mostrarMonedas(0);
       mapa1.personalizarParedes(0);
+      pista.show();
+      pista.verPista();
       cohete.show(1,1);
       jugador.mostrarProtagonista(0,0);
       enemigo.show(3,0);
       enemigo.move(mapa1);
       enemigo2.show(2,6);
       enemigo2.move(mapa1);
+      
       
  //llamamos la funcion del ataque del enemigo para hacer que el nivel se reinicie     
       AtaqueEnemigo();
@@ -359,16 +364,16 @@ image(ImgFondo3, 0, 0, 800, 400);
             textSize(30)
             text("Un Neptundriano a acabado contigo", 220, 200);
 
-            {
+            
             fill(255);
-            strokeWeight(6);
+            
             rect(500, 250, 230, 30, 6);
-            }
-            {
+            
+            
                      fill(20);
                      textSize(20);
                      text("Volver al inicio", 550, 270);
-            }
+            
             break;
             
             case 9:
@@ -381,7 +386,7 @@ image(ImgFondo3, 0, 0, 800, 400);
 
             {
             fill(255);
-            strokeWeight(6);
+            
             rect(500, 250, 230, 30, 6);
             }
             {
@@ -401,7 +406,7 @@ image(ImgFondo3, 0, 0, 800, 400);
 
             {
             fill(255);
-            strokeWeight(6);
+            
             rect(500, 250, 230, 30, 6);
             }
             {
@@ -420,7 +425,7 @@ image(ImgFondo3, 0, 0, 800, 400);
     
             {
             fill(255);
-            strokeWeight(6);
+            
             rect(500, 250, 230, 30, 6);
             }
             {
@@ -439,7 +444,7 @@ image(ImgFondo3, 0, 0, 800, 400);
 
             {
             fill(255);
-            strokeWeight(6);
+            
             rect(500, 250, 230, 30, 6);
             }
             {
@@ -448,6 +453,17 @@ image(ImgFondo3, 0, 0, 800, 400);
                      text("Volver al inicio", 550, 270);
             }
             break;
+            case 13:
+                background(20);
+
+                fill(255);
+                textSize(20);
+                text("No todo es lo que parece, a veces debes pasar atravez de lo que vez",150,220);
+
+                fill(255);
+            strokeWeight(6);
+            rect(100, 300, 30, 30, 6);
+                break;
   }
 }
 function keyPressed() {
@@ -505,7 +521,7 @@ function keyPressed() {
                 //rect(820, 350, 160,20,7);
                 if(mouseX > 820 && mouseX < 980 && mouseY > 350 && mouseY < 370 && pantalla === 2){
                     console.log(pantalla);
-                      pantalla = 3;    
+                      pantalla = 13;    
                   }
 
                   break;
@@ -561,6 +577,16 @@ function keyPressed() {
                                             
                                             }
                                     break;
+
+                                    case 13:
+                                        //rect(100, 300, 30, 30, 6);
+                                        if(mouseX > 100 && mouseX < 130 && mouseY > 300 && mouseY < 330 && pantalla === 13) {
+                                          console.log(pantalla);
+                                            pantalla = 2;
+                                            
+                                            }
+
+                                        break;
                           
              
       }
