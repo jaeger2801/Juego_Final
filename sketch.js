@@ -253,7 +253,7 @@ image(ImgFondo3, 0, 0, 800, 400);
         break;
  //----------------------------------------------------------------
  //Nivel5
- case 6:
+ case 6://Marte
     imageMode(CORNER);
     image(ImgFondo5, 0, 0, 800, 400);
      mapa1.personalizarParedes5(4);

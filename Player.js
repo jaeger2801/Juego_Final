@@ -11,6 +11,8 @@ class Player {
 mostrarProtagonista(){
     fill(255, 0, 0);
     ellipse(this.xPos, this.yPos, 30, 30);
+    imageMode(CENTER);
+        //image(ImgProta,this.enemyPosX, this.enemyPosY,40, 40);
 }
 updateLocation(){
     this.xPos = (this.pCol * 40) + 20; // validamos el mapa en la matriz
