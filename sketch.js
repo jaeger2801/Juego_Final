@@ -1,4 +1,4 @@
-//escenarios
+  //escenarios
 let mapa1;
 let mapa2;
 let pantalla;
@@ -61,7 +61,7 @@ function preload(){
 
 function setup() {
   createCanvas(1000, 400);
-  pantalla = 1;
+  pantalla = 2;
   
   
   
@@ -103,10 +103,9 @@ function setup() {
 }
 
 function draw() {
-  background(20); 
+  background(200); 
   
   mapa1.mostrar();
-  
   
 
   switch(pantalla){
@@ -127,7 +126,7 @@ function draw() {
 	        rect(300, 330, ancho+10, 10, 8);
 	
 	
-	if(frameCount%60 == 0) {
+	if(frameCount%10 == 0) {
 		ancho +=40;
 		
 		if(ancho>=340) {
@@ -465,8 +464,10 @@ function AtaqueEnemigo4() {
  function LlegadaCohete() {
      if (dist(jugador.getX(), jugador.getY(), cohete.getX(), cohete.getY()) < 5) {
          
-        fill(255);
-        rect(820, 350, 160,20,7);
+        //fill(255);
+        //rect(820, 350, 160,20,7);
+        jugador.reset();
+        pantalla = 3;
         
         
 
@@ -474,4 +475,4 @@ function AtaqueEnemigo4() {
                                                     
      }
     } 
-      console.log("pantalla2");                                          
+      console.log("pantalla2");                                         
