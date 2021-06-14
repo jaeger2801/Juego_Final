@@ -160,8 +160,8 @@ function draw() {
 //-------------------------------------------------------------
 //Nivel 2
      case 3: //Urano
-     //imageMode(CORNER);
-     //image(ImgFondo2, 0, 0, 800, 400);
+     imageMode(CORNER);
+     image(ImgFondo2, 0, 0, 800, 400);
      
          mapa1.personalizarParedes2(1);
          jugador.mostrarProtagonista(0,0);
