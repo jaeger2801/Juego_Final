@@ -80,7 +80,7 @@ function preload(){
 
 function setup() {
   createCanvas(1000, 400);
-  pantalla = 3;
+  pantalla = 0;
   
   
   
@@ -163,6 +163,7 @@ function draw() {
        //Neptuno 
       imageMode(CORNER);
       image(ImgFondo1, 0, 0, 800, 400);
+      moneda.mostrarMonedas(0);
       mapa1.personalizarParedes(0);
       cohete.show(1,1);
       jugador.mostrarProtagonista(0,0);
@@ -173,7 +174,13 @@ function draw() {
       
  //llamamos la funcion del ataque del enemigo para hacer que el nivel se reinicie     
       AtaqueEnemigo();
+      if(jugador.getVida() == 0){
+          pantalla = 8;
+      }
       AtaqueEnemigo2();
+      if(jugador.getVida() == 0){
+          pantalla = 8;
+      }
 
 //Llegada al cohete para pasar al siguente nivel
       mapa1.LlegadaCohete();
@@ -195,7 +202,13 @@ function draw() {
          
 //llamamos la funcion del ataque del enemigo para hacer que el nivel se reinicie
       AtaqueEnemigo3();
+      if(jugador.getVida() == 0){
+        pantalla = 9;
+      }
       AtaqueEnemigo4();
+      if(jugador.getVida() == 0){
+        pantalla = 9;
+      }
 
       //Llegada al cohete para pasar al siguente nivel
       mapa1.LlegadaCohete2();
@@ -219,8 +232,17 @@ image(ImgFondo3, 0, 0, 800, 400);
 
     //Enemigos de Saturno
     AtaqueEnemigo5();
+    if(jugador.getVida() == 0){
+        pantalla = 10;
+      }
     AtaqueEnemigo6();
+    if(jugador.getVida() == 0){
+        pantalla = 10;
+      }
     AtaqueEnemigo7();
+    if(jugador.getVida() == 0){
+        pantalla = 10;
+      }
 
     //Llegada al cohete para pasar al siguente nivel
     mapa1.LlegadaCohete3();
@@ -244,9 +266,21 @@ image(ImgFondo3, 0, 0, 800, 400);
     enemigo11.move(mapa1);
 
     AtaqueEnemigo8();
+    if(jugador.getVida() == 0){
+        pantalla = 11;
+      }
     AtaqueEnemigo9();
+    if(jugador.getVida() == 0){
+        pantalla = 11;
+      }
     AtaqueEnemigo10();
+    if(jugador.getVida() == 0){
+        pantalla = 11;
+      }
     AtaqueEnemigo11();
+    if(jugador.getVida() == 0){
+        pantalla = 11;
+      }
     //Llegada al cohete para pasar al siguente nivel
     mapa1.LlegadaCohete4();
 
@@ -273,16 +307,34 @@ image(ImgFondo3, 0, 0, 800, 400);
      enemigo17.move(mapa1);
 
      AtaqueEnemigo12();
+     if(jugador.getVida() == 0){
+        pantalla = 12;
+      }
      AtaqueEnemigo13();
+     if(jugador.getVida() == 0){
+        pantalla = 12;
+      }
      AtaqueEnemigo14();
+     if(jugador.getVida() == 0){
+        pantalla = 12;
+      }
      AtaqueEnemigo15();
+     if(jugador.getVida() == 0){
+        pantalla = 12;
+      }
      AtaqueEnemigo16();
+     if(jugador.getVida() == 0){
+        pantalla = 12;
+      }
      AtaqueEnemigo17();
+     if(jugador.getVida() == 0){
+        pantalla = 12;
+      }
 
      mapa1.LlegadaCohete5();
      
      break;
-     case 7:
+     case 7://pantalla que aparece al terminar el juego
          background(20);
          fill(255);
          rect(1000, 400, 0, 0);
@@ -299,10 +351,103 @@ image(ImgFondo3, 0, 0, 800, 400);
          stroke(255);
          strokeWeight(6);
          rect(300, 250, 330, 30, 6);
-
-         
-
          break;
+
+         case 8:
+            background(0);
+            fill(255)
+            textSize(30)
+            text("Un Neptundriano a acabado contigo", 220, 200);
+
+            {
+            fill(255);
+            strokeWeight(6);
+            rect(500, 250, 230, 30, 6);
+            }
+            {
+                     fill(20);
+                     textSize(20);
+                     text("Volver al inicio", 550, 270);
+            }
+            break;
+            
+            case 9:
+            background(0);
+            fill(255)
+            textSize(30)
+            text("Un Uraniano a acabado contigo", 220, 200);
+
+        
+
+            {
+            fill(255);
+            strokeWeight(6);
+            rect(500, 250, 230, 30, 6);
+            }
+            {
+                     fill(20);
+                     textSize(20);
+                     text("Volver al inicio", 550, 270);
+            }
+            break;
+
+            case 10:
+            background(0);
+            fill(255)
+            textSize(30)
+            text("Un Saturniano a acabado contigo", 220, 200);
+
+           
+
+            {
+            fill(255);
+            strokeWeight(6);
+            rect(500, 250, 230, 30, 6);
+            }
+            {
+                     fill(20);
+                     textSize(20);
+                     text("Volver al inicio", 550, 270);
+            }
+            break;
+
+            case 12:
+            background(0);
+            fill(255)
+            textSize(30)
+            text("Un Martiano a acabado contigo", 220, 200);
+
+    
+            {
+            fill(255);
+            strokeWeight(6);
+            rect(500, 250, 230, 30, 6);
+            }
+            {
+                     fill(20);
+                     textSize(20);
+                     text("Volver al inicio", 550, 270);
+            }
+            break;
+            case 11:
+            background(0);
+            fill(255)
+            textSize(30)
+            text("Un Jupertiano a acabado contigo", 220, 200);
+
+            
+
+            {
+            fill(255);
+            strokeWeight(6);
+            rect(500, 250, 230, 30, 6);
+            }
+            {
+                     fill(20);
+                     textSize(20);
+                     text("Volver al inicio", 550, 270);
+            }
+            break;
   }
 }
 function keyPressed() {
@@ -369,21 +514,65 @@ function keyPressed() {
                       if(mouseX > 300 && mouseX < 630 && mouseY > 250 && mouseY < 280 && pantalla === 7){
                         console.log(pantalla);
                           pantalla = 0; 
-                      break;
+                      }
+                          break;
+                          case 8:
+                              
+                                  //rect(500, 250, 230, 30, 6); <-------- Boton para regresar al inicio
+                                  if(mouseX > 500 && mouseX < 730 && mouseY > 250 && mouseY < 280 && pantalla === 8) {
+                                    console.log(pantalla);
+                                      pantalla = 0;
+                                      
+                                      }
+                              break;
+                              case 9:
+                                 
+                                      //rect(500, 250, 230, 30, 6); <-------- Boton para regresar al inicio
+                                      if(mouseX > 500 && mouseX < 730 && mouseY > 250 && mouseY < 280 && pantalla === 9) {
+                                        console.log(pantalla);
+                                          pantalla = 0;
+                                          
+                                          }
+                                  break;
+                                  case 10:
+                                   
+                                        //rect(500, 250, 230, 30, 6); <-------- Boton para regresar al inicio
+                                        if(mouseX > 500 && mouseX < 730 && mouseY > 250 && mouseY < 280 && pantalla === 10) {
+                                          console.log(pantalla);
+                                            pantalla = 0;
+                                            
+                                            }
+                                    break;
+                                    case 11:
+                                   
+                                        //rect(500, 250, 230, 30, 6); <-------- Boton para regresar al inicio
+                                        if(mouseX > 500 && mouseX < 730 && mouseY > 250 && mouseY < 280 && pantalla === 11) {
+                                          console.log(pantalla);
+                                            pantalla = 0;
+                                            
+                                            }
+                                    break;
+                                    case 12:
+                                   
+                                        //rect(500, 250, 230, 30, 6); <-------- Boton para regresar al inicio
+                                        if(mouseX > 500 && mouseX < 730 && mouseY > 250 && mouseY < 280 && pantalla === 12) {
+                                          console.log(pantalla);
+                                            pantalla = 0;
+                                            
+                                            }
+                                    break;
+                          
+             
       }
       
   }
-}
-
-  
-  
-
 
 //Funciones de Vida, moneda y respawn de Neptuno
 //aqui vamos a configurar el ataque del enemigo 1 que está en el nivel 1
 function AtaqueEnemigo() {
     if (dist(jugador.getX(), jugador.getY(), enemigo.getX(), enemigo.getY()) < 5) {
         
+        jugador.pvida();
         jugador.reset();
         enemigo.init();
         console.log("se la comió");
@@ -393,6 +582,7 @@ function AtaqueEnemigo() {
 function AtaqueEnemigo2() {
     if (dist(jugador.getX(), jugador.getY(), enemigo2.getX(), enemigo2.getY()) < 5) {
         
+        jugador.pvida();
         jugador.reset();
         enemigo2.init();
         console.log("se la comió");
@@ -404,6 +594,7 @@ function AtaqueEnemigo2() {
 function AtaqueEnemigo3() {
     if (dist(jugador.getX(), jugador.getY(), enemigo3.getX(), enemigo3.getY()) < 5) {
         
+        jugador.pvida();
         jugador.reset();
         enemigo3.init();
         console.log("se la comió");
@@ -414,6 +605,7 @@ function AtaqueEnemigo3() {
 function AtaqueEnemigo4() {
     if (dist(jugador.getX(), jugador.getY(), enemigo4.getX(), enemigo4.getY()) < 5) {
         
+        jugador.pvida();
         jugador.reset();
         enemigo4.init();
         console.log("se la comió");
@@ -424,6 +616,7 @@ function AtaqueEnemigo4() {
     function AtaqueEnemigo5() {
         if (dist(jugador.getX(), jugador.getY(), enemigo5.getX(), enemigo5.getY()) < 5) {
             
+            jugador.pvida();
             jugador.reset();
             enemigo5.init();
             console.log("se la comió");
@@ -432,6 +625,7 @@ function AtaqueEnemigo4() {
         function AtaqueEnemigo6() {
             if (dist(jugador.getX(), jugador.getY(), enemigo6.getX(), enemigo6.getY()) < 5) {
                 
+                jugador.pvida();
                 jugador.reset();
                 enemigo6.init();
                 console.log("se la comió");
@@ -440,6 +634,7 @@ function AtaqueEnemigo4() {
             function AtaqueEnemigo7() {
                 if (dist(jugador.getX(), jugador.getY(), enemigo7.getX(), enemigo7.getY()) < 5) {
                     
+                    jugador.pvida();
                     jugador.reset();
                     enemigo7.init();
                     console.log("se la comió");
@@ -448,6 +643,7 @@ function AtaqueEnemigo4() {
         function AtaqueEnemigo8() {
             if (dist(jugador.getX(), jugador.getY(), enemigo8.getX(), enemigo8.getY()) < 5) {
                 
+                jugador.pvida();
                 jugador.reset();
                 enemigo8.init();
                 console.log("se la comió");
@@ -456,6 +652,7 @@ function AtaqueEnemigo4() {
             function AtaqueEnemigo9() {
                 if (dist(jugador.getX(), jugador.getY(), enemigo9.getX(), enemigo9.getY()) < 5) {
                     
+                    jugador.pvida();
                     jugador.reset();
                     enemigo9.init();
                     console.log("se la comió");
@@ -464,6 +661,7 @@ function AtaqueEnemigo4() {
                 function AtaqueEnemigo10() {
                     if (dist(jugador.getX(), jugador.getY(), enemigo10.getX(), enemigo10.getY()) < 5) {
                         
+                        jugador.pvida();
                         jugador.reset();
                         enemigo10.init();
                         console.log("se la comió");
@@ -472,6 +670,7 @@ function AtaqueEnemigo4() {
                     function AtaqueEnemigo11() {
                         if (dist(jugador.getX(), jugador.getY(), enemigo11.getX(), enemigo11.getY()) < 5) {
                             
+                            jugador.pvida();
                             jugador.reset();
                             enemigo11.init();
                             console.log("se la comió");
@@ -480,6 +679,7 @@ function AtaqueEnemigo4() {
                         function AtaqueEnemigo12() {
                             if (dist(jugador.getX(), jugador.getY(), enemigo12.getX(), enemigo12.getY()) < 5) {
                                 
+                                jugador.pvida();
                                jugador.reset();
                                 enemigo12.init();
                                 console.log("se la comió");
@@ -488,6 +688,7 @@ function AtaqueEnemigo4() {
                             function AtaqueEnemigo13() {
                                 if (dist(jugador.getX(), jugador.getY(), enemigo13.getX(), enemigo13.getY()) < 5) {
                                     
+                                    jugador.pvida();
                                     jugador.reset();
                                     enemigo13.init();
                                     console.log("se la comió");
@@ -496,6 +697,7 @@ function AtaqueEnemigo4() {
                                 function AtaqueEnemigo14() {
                                     if (dist(jugador.getX(), jugador.getY(), enemigo14.getX(), enemigo14.getY()) < 5) {
                                         
+                                        jugador.pvida();
                                         jugador.reset();
                                         enemigo14.init();
                                         console.log("se la comió");
@@ -504,6 +706,7 @@ function AtaqueEnemigo4() {
                                     function AtaqueEnemigo15() {
                                         if (dist(jugador.getX(), jugador.getY(), enemigo15.getX(), enemigo15.getY()) < 5) {
                                             
+                                            jugador.pvida();
                                             jugador.reset();
                                             enemigo15.init();
                                             console.log("se la comió");
@@ -512,6 +715,7 @@ function AtaqueEnemigo4() {
                                         function AtaqueEnemigo16() {
                                             if (dist(jugador.getX(), jugador.getY(), enemigo16.getX(), enemigo16.getY()) < 5) {
                                                 
+                                                jugador.pvida();
                                                 jugador.reset();
                                                 enemigo16.init();
                                                 console.log("se la comió");
@@ -520,6 +724,7 @@ function AtaqueEnemigo4() {
                                             function AtaqueEnemigo17() {
                                                 if (dist(jugador.getX(), jugador.getY(), enemigo17.getX(), enemigo17.getY()) < 5) {
                                                     
+                                                    jugador.pvida();
                                                     jugador.reset();
                                                     enemigo17.init();
                                                     console.log("se la comió");

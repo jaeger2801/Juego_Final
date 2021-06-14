@@ -13,13 +13,14 @@ class Moneda {
 
     mostrarMonedas() {
         imageMode(CENTER);
-        this.premioX = (this.premioCol * 100) + 50; 
-        this.premioY = (this.premioFil * 100) + 50;
-        rect(20, 20 ,20, 20);
+        this.monedaX = (this.monedaCol * 40) + 20; 
+        this.monedaY = (this.monedaFil * 100) + 50;
+        fill(20);
+        ellipse(this.monedaX, this.monedaY ,20, 20);
     }
 
     getMonedaCol(){
-        return this.premioCol;
+        return this.monedaCol;
     }
 
     getMonedaFil(){

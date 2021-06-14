@@ -534,7 +534,7 @@ personalizarParedes5(Nivel5) {//Programacion del plano de marte
             this.escaque[1][8] = 1;
             this.escaque[1][10] = 1;
             this.escaque[1][12] = 1;
-            this.escaque[1][15] = 1;
+            
 //tercera linea
             this.escaque[2][0] = 1;
             this.escaque[2][2] = 1;
