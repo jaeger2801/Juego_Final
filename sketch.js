@@ -45,10 +45,28 @@ let ImgFondo2;
 let ImgFondo3;
 let ImgFondo4;
 let ImgFondo5;
-
+//Imagenes para los enemigos
+let ImgEnemyNeptuno;
+let ImgEnemyUrano;
+let ImgEnemySaturno;
+let ImgEnemyJupiter;
+let ImgEnemyMarte;
+//Imagen para el personaje
+let ImgProta;
+//Imagen para la nave
+let ImgNave
 
 function preload(){
+    //Imagen para la nave
+    ImgNave = new loadImage("data/Nave.png")
     //Imagenes del personaje
+    ImgProta = new loadImage("data/Protagonista.png")
+    //Imagenes de los enemigos
+    ImgEnemyJupiter = new loadImage("data/EnemyJupiter.png")
+    ImgEnemyNeptuno = new loadImage("data/EnemyNeptuno.png")
+    ImgEnemyUrano = new loadImage("data/EnemyUrano.png")
+    ImgEnemySaturno = new loadImage("data/EnemySaturno.png")
+    ImgEnemyMarte = new loadImage("data/EnemyMarte.png")
     //Imagenes fondos
     ImgCarga = new loadImage("data/IntroMilkyCargando.png")
     ImgInicio = new loadImage("data/IntroMilkyWar.png")
@@ -62,7 +80,7 @@ function preload(){
 
 function setup() {
   createCanvas(1000, 400);
-  pantalla = 0;
+  pantalla = 2;
   
   
   
@@ -111,6 +129,7 @@ function draw() {
   
 
   switch(pantalla){
+      //Pantalla de inicio
       case 0:
         fill(0, 0, 0,);
         rect(773,300,170,60);
@@ -119,6 +138,7 @@ function draw() {
           
           break;
 //---------------------------------------------------------------------------------------
+//Pantalla de carga
           case 1:
               imageMode(CORNER);
               image(ImgCarga, 0, 0, 1000, 400);

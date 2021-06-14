@@ -8,29 +8,11 @@ class Cohete {
    
     //Cohete de Neptuno
     show () {
-        fill(0, 255, 255);
-        ellipse(this.cohetePosX, this.cohetePosY, 30, 30);
+        
+        imageMode(CENTER);
+        image(ImgNave,this.cohetePosX, this.cohetePosY,40, 40);
     }
-    //Cohete de Urano
-    show1 () {
-        fill(0, 255, 255);
-        ellipse(this.cohetePosX, this.cohetePosY, 30, 30);
-    }
-    //Cohete de saturno
-    show2 () {
-        fill(0, 255, 255);
-        ellipse(this.cohetePosX, this.cohetePosY, 30, 30);
-    }
-    //Cohete de Jupiter
-    show3 () {
-        fill(0, 255, 255);
-        ellipse(this.cohetePosX, this.cohetePosY, 30, 30);
-    }
-    //Cohete de marte
-    show4 () {
-        fill(0, 255, 255);
-        ellipse(this.cohetePosX, this.cohetePosY, 30, 30);
-    }
+   
     
     
     getX () {

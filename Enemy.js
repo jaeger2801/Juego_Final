@@ -18,8 +18,9 @@ class Enemy {
     }
     
     show () {
-        fill(0, 255, 0);
-        ellipse(this.enemyPosX, this.enemyPosY, 30, 30);
+        
+        imageMode(CENTER);
+        image(ImgEnemyNeptuno,this.enemyPosX, this.enemyPosY,40, 40);
     }
     move (mapa1) {
         if (frameCount % 10 == 0) {

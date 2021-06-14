@@ -10,6 +10,8 @@ class Cohete2 {
     show () {
         fill(0, 255, 255);
         ellipse(this.cohetePosX, this.cohetePosY, 30, 30);
+        imageMode(CENTER);
+        image(ImgNave,this.cohetePosX, this.cohetePosY,40, 40);
     }
      
     getX () {
